@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include "Game.h"
 
-void InitializeSDL(ScreenDimensions _screenDimensions)
+void InitializeSDL(const ScreenDimensions _screenDimensions)
 {
 	SDL_Init(SDL_INIT_VIDEO);
 
@@ -19,7 +19,7 @@ void InitializeSDL(ScreenDimensions _screenDimensions)
     SDL_SetRenderDrawBlendMode(game_state->renderer, SDL_BLENDMODE_BLEND);
 }
 
-void SetRenderColor(Color _rgb, unsigned char _alpha)
+void SetRenderColor(const Color _rgb, const unsigned char _alpha)
 {
     SDL_SetRenderDrawColor(game_state->renderer, _rgb.x, _rgb.y, _rgb.z, _alpha);
 }
