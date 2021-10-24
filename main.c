@@ -27,7 +27,8 @@ int main()
     InitializeEntityData();
 
     //TEST
-    const Sprite* testSprite = LoadSprite("icon-user-default.png");
+    Sprite* testSprite = LoadSprite("icon-user-default.png");
+    FlipSprite(testSprite, true, false);
     //TEST
 
     game_state->viewport = viewport;

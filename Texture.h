@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL_render.h>
+#include <stdbool.h>
+
 #include "Position.h"
 #include "Viewport.h"
 
@@ -25,6 +27,7 @@ typedef struct Sprite
 {
 	Texture* texture;
 	Position position;
+	SDL_RendererFlip flip;
 } Sprite;
 
 //##############################
@@ -34,3 +37,4 @@ Sprite* LoadSprite(const char* _fileName);
 Texture* LoadTextureFromDisk(const char* _fileName);
 SDL_Rect GetSpriteSourceSDLRect(const Sprite* _sprite);
 SDL_Rect GetSpriteDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport);
+void FlipSprite(Sprite* _sprite, bool _vertical, bool _horizontal);

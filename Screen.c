@@ -56,7 +56,7 @@ void DrawSprite(const Sprite* _sprite)
 {
 	const SDL_Rect dstRect = GetSpriteDestinationSDLRect(_sprite, game_state->viewport);
 	const SDL_Rect srcRect = GetSpriteSourceSDLRect(_sprite);
-    SDL_RenderCopy(game_state->renderer, _sprite->texture->sdl_texture, &srcRect, &dstRect);
+    SDL_RenderCopyEx(game_state->renderer, _sprite->texture->sdl_texture, &srcRect, &dstRect, 0, 0, _sprite->flip);
 }
 
 void DestroyScreen()

@@ -33,6 +33,11 @@ EntityID RegisterEntity()
 	return -1;
 }
 
+void AddSprite(EntityID _entityId, Sprite* _sprite)
+{
+	game_entities.sprites[_entityId] = _sprite;
+}
+
 void FreeEntity(const EntityID _entityId)
 {
 	game_entities.ids[_entityId] = UNUSED_ENTITY_ID;
