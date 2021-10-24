@@ -38,11 +38,25 @@ void PrepareScreen()
 
     SetRenderColor(clearColor, SDL_ALPHA_OPAQUE);
     ClearScreen();
+    SetViewport(game_state->viewport);
+}
+
+void SetViewport(const Viewport* _viewport)
+{
+	const SDL_Rect rect = GetViewportSDLRect(_viewport);
+    SDL_RenderSetViewport(game_state->renderer, &rect);
 }
 
 void DrawScreen()
 {
     SDL_RenderPresent(game_state->renderer);
+}
+
+void DrawSprite(const Sprite* _sprite)
+{
+	const SDL_Rect dstRect = GetSpriteDestinationSDLRect(_sprite, game_state->viewport);
+	const SDL_Rect srcRect = GetSpriteSourceSDLRect(_sprite);
+    SDL_RenderCopy(game_state->renderer, _sprite->texture->sdl_texture, &srcRect, &dstRect);
 }
 
 void DestroyScreen()

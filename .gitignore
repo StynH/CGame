@@ -56,3 +56,7 @@ dkms.conf
 include/
 
 x64/Debug/
+
+lib/x64/
+
+lib/x86/

@@ -54,3 +54,19 @@ typedef struct Vector3Du
 	unsigned char y;
 	unsigned char z;
 } Vector3Du;
+
+typedef struct Rectangle
+{
+	int x;
+	int y;
+	int width;
+	int height;
+} Rectangle;
+
+typedef struct RectangleF
+{
+	float x;
+	float y;
+	float width;
+	float height;
+} RectangleF;
