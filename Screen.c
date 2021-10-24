@@ -7,7 +7,7 @@ void InitializeSDL(const ScreenDimensions _screenDimensions)
 	SDL_Init(SDL_INIT_VIDEO);
 
     game_state->window = SDL_CreateWindow(
-        "Surge of Power",
+        "CGame",
         SDL_WINDOWPOS_UNDEFINED,
         SDL_WINDOWPOS_UNDEFINED,
         _screenDimensions.x,

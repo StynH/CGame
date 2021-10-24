@@ -55,8 +55,8 @@ SDL_Rect GetSpriteSourceSDLRect(const Sprite* _sprite)
 SDL_Rect GetSpriteDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport)
 {
 	SDL_Rect rect;
-	rect.x = _sprite->position.x - (float)_viewport->x;
-	rect.y = _sprite->position.y - (float)_viewport->y;
+	rect.x = (int)(_sprite->position.x - (float)_viewport->x);
+	rect.y = (int)(_sprite->position.y - (float)_viewport->y);
 	rect.w = _sprite->texture->dimensions.x;
 	rect.h = _sprite->texture->dimensions.y;
 	return rect;
