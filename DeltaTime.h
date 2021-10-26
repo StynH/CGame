@@ -5,8 +5,8 @@
 //STRUCTURES
 //##############################
 typedef struct {
-    Uint64 now;
-    Uint64 last;
+    uint64_t now;
+    uint64_t last;
     float deltaTime;
 } DeltaTime;
 

@@ -19,7 +19,7 @@ void InitializeSDL(const ScreenDimensions _screenDimensions)
     SDL_SetRenderDrawBlendMode(game_state->renderer, SDL_BLENDMODE_BLEND);
 }
 
-void SetRenderColor(const Color _rgb, const unsigned char _alpha)
+void SetRenderColor(const Color _rgb, const uint8_t _alpha)
 {
     SDL_SetRenderDrawColor(game_state->renderer, _rgb.x, _rgb.y, _rgb.z, _alpha);
 }

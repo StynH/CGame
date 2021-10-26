@@ -13,7 +13,7 @@ typedef Vector3Du Color;
 //FUNCTIONS
 //##############################
 void InitializeSDL(ScreenDimensions _screenDimensions);
-void SetRenderColor(Color _rgb, unsigned char _alpha);
+void SetRenderColor(Color _rgb, uint8_t _alpha);
 void ClearScreen(void);
 void PrepareScreen(void);
 void SetViewport(const Viewport* _viewport);

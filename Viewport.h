@@ -1,6 +1,5 @@
 #pragma once
 #include <SDL_rect.h>
-
 #include "Position.h"
 
 //##############################

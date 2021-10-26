@@ -1,6 +1,4 @@
 #include "HashTable.h"
-
-#include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,9 +9,12 @@ void HashMapInitialize(HashMap* _hashMap)
     _hashMap->size = 0;
 
     _hashMap->bucket_array = malloc(BUCKET_ARRAY_INIT_SIZE * sizeof(HashNode));
-    for(uint32_t i = 0; i < BUCKET_ARRAY_INIT_SIZE; ++i)
+    if(_hashMap->bucket_array)
     {
-        _hashMap->bucket_array[i] = NULL;
+        for (uint32_t i = 0; i < BUCKET_ARRAY_INIT_SIZE; ++i)
+        {
+            _hashMap->bucket_array[i] = NULL;
+        }
     }
 }
 
@@ -120,7 +121,7 @@ uint64_t HashCode(const char* _key)
     uint64_t hash = 5381;
     uint32_t c;
 
-    while ((c = (unsigned char)*_key++)) {
+    while ((c = (uint8_t)*_key++)) {
         hash = ((hash << 5) + hash) + c;
     }
 

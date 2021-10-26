@@ -1,7 +1,6 @@
 #pragma once
 #include <SDL_render.h>
 #include <stdbool.h>
-
 #include "Position.h"
 #include "Viewport.h"
 

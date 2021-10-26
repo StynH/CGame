@@ -1,12 +1,13 @@
 #pragma once
+#include <stdint.h>
 
 //##############################
 //STRUCTS
 //##############################
 typedef struct Vector2D
 {
-	int x;
-	int y;
+	int32_t x;
+	int32_t y;
 } Vector2D;
 
 typedef struct Vector2Df
@@ -29,9 +30,9 @@ typedef struct Vector2Du
 
 typedef struct Vector3D
 {
-	int x;
-	int y;
-	int z;
+	int32_t x;
+	int32_t y;
+	int32_t z;
 } Vector3D;
 
 typedef struct Vector3Df
@@ -57,10 +58,10 @@ typedef struct Vector3Du
 
 typedef struct Rectangle
 {
-	int x;
-	int y;
-	int width;
-	int height;
+	int32_t x;
+	int32_t y;
+	int32_t width;
+	int32_t height;
 } Rectangle;
 
 typedef struct RectangleF

@@ -5,13 +5,13 @@
 //##############################
 //DEFINITIONS
 //##############################
-#define MAX_ENTITIES 65536
-#define UNUSED_ENTITY_ID 65536
+#define MAX_ENTITIES 65535
+#define UNUSED_ENTITY_ID 65535
 
 //##############################
 //STRUCTS
 //##############################
-typedef uint32_t EntityID;
+typedef uint16_t EntityID;
 
 typedef struct Entities
 {
@@ -26,7 +26,7 @@ Entities game_entities;
 //FUNCTIONS
 //##############################
 void InitializeEntityData(void);
-int GetFreeEntityPosition(void);
+uint16_t GetFreeEntityPosition(void);
 EntityID RegisterEntity(void);
 void AddSprite(EntityID _entityId, Sprite* _sprite);
 void FreeEntity(EntityID _entityId);

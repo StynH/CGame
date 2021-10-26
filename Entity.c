@@ -2,15 +2,15 @@
 
 void InitializeEntityData()
 {
-	for(int i = 0; i < MAX_ENTITIES; ++i)
+	for(uint16_t i = 0; i < MAX_ENTITIES; ++i)
 	{
 		game_entities.ids[i] = UNUSED_ENTITY_ID;
 	}
 }
 
-int GetFreeEntityPosition()
+uint16_t GetFreeEntityPosition()
 {
-	for(int i = 0; i< MAX_ENTITIES; ++i)
+	for(uint16_t i = 0; i< MAX_ENTITIES; ++i)
 	{
 		if(game_entities.ids[i] == UNUSED_ENTITY_ID)
 		{
@@ -23,7 +23,7 @@ int GetFreeEntityPosition()
 
 EntityID RegisterEntity()
 {
-	const int free_entity_position = GetFreeEntityPosition();
+	const uint16_t free_entity_position = GetFreeEntityPosition();
 	if(free_entity_position != MAX_ENTITIES)
 	{
 		game_entities.ids[free_entity_position] = free_entity_position;
