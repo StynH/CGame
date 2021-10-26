@@ -66,14 +66,11 @@ void FlipSprite(Sprite* _sprite, bool _vertical, bool _horizontal)
 {
 	if(_vertical)
 	{
-		_sprite->flip = _sprite->flip == SDL_FLIP_NONE ? SDL_FLIP_VERTICAL : SDL_FLIP_NONE;
+		_sprite->flip ^= SDL_FLIP_VERTICAL;
 	}
-	else if(_horizontal)
+
+	if(_horizontal)
 	{
-		_sprite->flip = _sprite->flip == SDL_FLIP_NONE ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
-	}
-	else if (_vertical && _horizontal)
-	{
-		_sprite->flip = _sprite->flip == SDL_FLIP_NONE ? SDL_FLIP_HORIZONTAL | SDL_FLIP_VERTICAL : SDL_FLIP_NONE;
+		_sprite->flip ^= SDL_FLIP_HORIZONTAL;
 	}
 }
