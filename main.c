@@ -2,6 +2,7 @@
 #include "SDL.h"
 #include "Entity.h"
 #include "Game.h"
+#include "HashTable.h"
 #include "Screen.h"
 
 #define SCREEN_WIDTH 800

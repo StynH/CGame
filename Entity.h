@@ -11,7 +11,7 @@
 //##############################
 //STRUCTS
 //##############################
-typedef unsigned int EntityID;
+typedef uint32_t EntityID;
 
 typedef struct Entities
 {
