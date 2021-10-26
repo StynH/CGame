@@ -20,6 +20,6 @@ void TickDeltaTime() {
     ) / 1000.f;
 }
 
-void FreeTime() {
+void DestroyDeltaTime() {
     free(timer);
 }

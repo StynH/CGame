@@ -15,7 +15,7 @@ typedef struct {
 //##############################
 void InitializeDeltaTime(void);
 void TickDeltaTime(void);
-void FreeTime(void);
+void DestroyDeltaTime(void);
 
 //##############################
 //GLOBALS

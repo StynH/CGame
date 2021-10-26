@@ -1,3 +1,4 @@
+#include "DeltaTime.h"
 #include "SDL.h"
 #include "Entity.h"
 #include "Game.h"
@@ -23,7 +24,7 @@ int main()
         viewport->y = 0;
     }
 	InitializeSDL(dimensions);
-
+    InitializeDeltaTime();
     InitializeEntityData();
 
     //TEST
@@ -44,6 +45,7 @@ int main()
         DrawScreen();
     }
 
+    DestroyDeltaTime();
     DestroyScreen();
     DestroyGame();
 
