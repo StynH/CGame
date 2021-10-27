@@ -23,12 +23,13 @@ int main()
         viewport->x = 0;
         viewport->y = 0;
     }
+
 	InitializeSDL(dimensions);
     InitializeDeltaTime();
     InitializeEntityData();
 
     //TEST
-    Sprite* testSprite = LoadSprite("icon-user-default.png");
+    Sprite* testSprite = LoadSprite("16066_616166.jpg");
     FlipSprite(testSprite, true, false);
     //TEST
 
@@ -48,6 +49,7 @@ int main()
     DestroyDeltaTime();
     DestroyScreen();
     DestroyGame();
+    DestroyTextures();
 
     return 0;
 }

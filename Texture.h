@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL_render.h>
 #include <stdbool.h>
+#include "HashMap.h"
 #include "Position.h"
 #include "Viewport.h"
 
@@ -37,3 +38,12 @@ Texture* LoadTextureFromDisk(const char* _fileName);
 SDL_Rect GetSpriteSourceSDLRect(const Sprite* _sprite);
 SDL_Rect GetSpriteDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport);
 void FlipSprite(Sprite* _sprite, bool _vertical, bool _horizontal);
+void DestroyTextures(void);
+
+//##############################
+//PRIVATE
+//##############################
+HashMap* texture_hashmap;
+static void InitializeTextureHashMap(void);
+static void AddTextureToHashMap(const char* _fileName, Texture* _texture);
+static Texture* GetTextureFromHashMap(const char* _fileName);

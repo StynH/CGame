@@ -20,8 +20,6 @@ typedef struct Entities
 	Sprite* sprites[MAX_ENTITIES];
 } Entities;
 
-Entities game_entities;
-
 //##############################
 //FUNCTIONS
 //##############################
@@ -30,3 +28,8 @@ uint16_t GetFreeEntityPosition(void);
 EntityID RegisterEntity(void);
 void AddSprite(EntityID _entityId, Sprite* _sprite);
 void FreeEntity(EntityID _entityId);
+
+//##############################
+//GLOBALS
+//##############################
+Entities game_entities;

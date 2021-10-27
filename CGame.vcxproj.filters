@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DeltaTime.c" />
+    <ClCompile Include="Entity.c" />
+    <ClCompile Include="Game.c" />
+    <ClCompile Include="Input.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="Screen.c" />
+    <ClCompile Include="String.c" />
+    <ClCompile Include="Texture.c" />
+    <ClCompile Include="Viewport.c" />
+    <ClCompile Include="HashMap.c">
+      <Filter>Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="List.c">
+      <Filter>Data Structures</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DeltaTime.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Screen.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Viewport.h" />
+    <ClInclude Include="HashMap.h">
+      <Filter>Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Data Structures</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Data Structures">
+      <UniqueIdentifier>{fdc2f8d6-1076-4166-a423-4e81caace432}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

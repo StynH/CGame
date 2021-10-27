@@ -1,5 +1,4 @@
 #include "Viewport.h"
-
 #include <SDL_rect.h>
 
 SDL_Rect GetViewportSDLRect(const Viewport* _viewport)

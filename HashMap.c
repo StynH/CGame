@@ -1,4 +1,4 @@
-#include "HashTable.h"
+#include "HashMap.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,8 +25,10 @@ void* HashMapRemove(HashMap* _hashMap, const char* _key)
     HashNode* head = _hashMap->bucket_array[bucketIndex];
     
     HashNode* prev = NULL;
-    while (head) {
-        if (strcmp(head->key, _key) != 0 && hashCode == head->hash_code) {
+    while (head) 
+    {
+        if (strcmp(head->key, _key) == 0 && hashCode == head->hash_code) 
+        {
             break;
         }
         
@@ -34,31 +36,36 @@ void* HashMapRemove(HashMap* _hashMap, const char* _key)
         head = head->next;
     }
     
-    if (!head) {
+    if (!head) 
+    {
         return NULL;
     }
     
     _hashMap->size--;
     
-    if (prev) {
+    if (prev) 
+    {
         free(prev->next);
         prev->next = head->next;
     }
-    else {
+    else 
+    {
         _hashMap->bucket_array[bucketIndex] = head->next;
     }
 
     return head->value;
 }
 
-void* HashMapGet(HashMap* _hashMap, const char* _key)
+void* HashMapGet(const HashMap* _hashMap, const char* _key)
 {
 	const uint32_t bucketIndex = GetBucketIndex(_hashMap, _key);
     const uint64_t hashCode = HashCode(_key);
     HashNode* head = _hashMap->bucket_array[bucketIndex];
     
-    while (head) {
-        if (strcmp(head->key, _key) == 0 && head->hash_code == hashCode) {
+    while (head) 
+    {
+        if (strcmp(head->key, _key) == 0 && head->hash_code == hashCode) 
+        {
             return head->value;
         }
         head = head->next;
@@ -73,8 +80,10 @@ void HashMapAdd(HashMap* _hashMap, const char* _key, void* _value)
 	const uint64_t hashCode = HashCode(_key);
     HashNode* head = _hashMap->bucket_array[bucketIndex];
     
-    while (head) {
-        if (strcmp(head->key, _key) == 0 && head->hash_code == hashCode) {
+    while (head) 
+    {
+        if (strcmp(head->key, _key) == 0 && head->hash_code == hashCode) 
+        {
             head->value = _value;
             return;
         }
@@ -95,25 +104,42 @@ void HashMapAdd(HashMap* _hashMap, const char* _key, void* _value)
         _hashMap->bucket_array[bucketIndex] = newNode;
     }
 
-    if ((1.0 * _hashMap->size) / _hashMap->num_buckets >= 0.7) {
+    if ((1.0 * _hashMap->size) / _hashMap->num_buckets >= 0.7) 
+    {
         const uint32_t tempSize = _hashMap->num_buckets;
+        HashNode** newArray = realloc(_hashMap->bucket_array, _hashMap->num_buckets * sizeof(HashNode));
 
-        _hashMap->num_buckets = _hashMap->num_buckets * 2;
-        _hashMap->size = 0;
-        _hashMap->bucket_array = realloc(_hashMap->bucket_array, _hashMap->num_buckets * sizeof(HashNode));
+        if(newArray)
+        {
+            _hashMap->num_buckets = _hashMap->num_buckets * 2;
+            _hashMap->size = 0;
+            _hashMap->bucket_array = newArray;
 
-        for (uint32_t i = tempSize; i < _hashMap->num_buckets; i++) {
-            _hashMap->bucket_array[i] = NULL;
-        }
+            for (uint32_t i = tempSize; i < _hashMap->num_buckets; i++) 
+            {
+                _hashMap->bucket_array[i] = NULL;
+            }
 
-        for(uint32_t i = 0; i < tempSize; ++i){
-            HashNode* headNode = _hashMap->bucket_array[i];
-            while (headNode != NULL) {
-                HashMapAdd(_hashMap, headNode->key, headNode->value);
-                headNode = headNode->next;
+            for (uint32_t i = 0; i < tempSize; ++i) 
+            {
+                HashNode* headNode = _hashMap->bucket_array[i];
+                while (headNode != NULL) {
+                    HashMapAdd(_hashMap, headNode->key, headNode->value);
+                    headNode = headNode->next;
+                }
             }
         }
     }
+}
+
+void HashMapDestroy(HashMap* _hashMap)
+{
+    for(uint32_t i = 0; i < _hashMap->num_buckets; ++i)
+    {
+        free(_hashMap->bucket_array[i]);
+    }
+    free(_hashMap->bucket_array);
+    free(_hashMap);
 }
 
 uint64_t HashCode(const char* _key)
@@ -121,7 +147,8 @@ uint64_t HashCode(const char* _key)
     uint64_t hash = 5381;
     uint32_t c;
 
-    while ((c = (uint8_t)*_key++)) {
+    while ((c = (uint8_t)*_key++)) 
+    {
         hash = ((hash << 5) + hash) + c;
     }
 

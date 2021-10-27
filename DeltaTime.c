@@ -1,7 +1,8 @@
 #include "DeltaTime.h"
 #include <stdlib.h>
 
-void InitializeDeltaTime() {
+void InitializeDeltaTime()
+{
     timer = malloc(sizeof(DeltaTime));
     if(timer)
     {
@@ -10,7 +11,8 @@ void InitializeDeltaTime() {
     }
 }
 
-void TickDeltaTime() {
+void TickDeltaTime()
+{
     timer->last = timer->now;
     timer->now = SDL_GetPerformanceCounter();
 
@@ -20,6 +22,7 @@ void TickDeltaTime() {
     ) / 1000.f;
 }
 
-void DestroyDeltaTime() {
+void DestroyDeltaTime()
+{
     free(timer);
 }

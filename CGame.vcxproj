@@ -146,8 +146,9 @@
     <ClCompile Include="DeltaTime.c" />
     <ClCompile Include="Entity.c" />
     <ClCompile Include="Game.c" />
-    <ClCompile Include="HashTable.c" />
+    <ClCompile Include="HashMap.c" />
     <ClCompile Include="Input.c" />
+    <ClCompile Include="List.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Screen.c" />
     <ClCompile Include="String.c" />
@@ -158,8 +159,9 @@
     <ClInclude Include="DeltaTime.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="HashTable.h" />
+    <ClInclude Include="HashMap.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="String.h" />

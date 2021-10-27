@@ -5,7 +5,17 @@
 
 Sprite* LoadSprite(const char* _fileName)
 {
-	Texture* texture = LoadTextureFromDisk(_fileName);
+	if(texture_hashmap == NULL)
+	{
+		InitializeTextureHashMap();
+	}
+
+	Texture* texture = GetTextureFromHashMap(_fileName);
+	if(texture == NULL)
+	{
+		texture = LoadTextureFromDisk(_fileName);
+		AddTextureToHashMap(_fileName, texture);
+	}
 
 	Sprite* sprite = malloc(sizeof(Sprite*));
 	if(sprite)
@@ -73,4 +83,25 @@ void FlipSprite(Sprite* _sprite, bool _vertical, bool _horizontal)
 	{
 		_sprite->flip ^= SDL_FLIP_HORIZONTAL;
 	}
+}
+
+void DestroyTextures()
+{
+	HashMapDestroy(texture_hashmap);
+}
+
+void InitializeTextureHashMap()
+{
+	texture_hashmap = malloc(sizeof(HashMap));
+	HashMapInitialize(texture_hashmap);
+}
+
+void AddTextureToHashMap(const char* _fileName, Texture* _texture)
+{
+	HashMapAdd(texture_hashmap, _fileName, _texture);
+}
+
+Texture* GetTextureFromHashMap(const char* _fileName)
+{
+	return HashMapGet(texture_hashmap, _fileName);
 }

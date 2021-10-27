@@ -30,11 +30,12 @@ typedef struct HashMap
 //##############################
 void HashMapInitialize(HashMap* _hashMap);
 void* HashMapRemove(HashMap* _hashMap, const char* _key);
-void* HashMapGet(HashMap* _hashMap, const char* _key);
+void* HashMapGet(const HashMap* _hashMap, const char* _key);
 void HashMapAdd(HashMap* _hashMap, const char* _key, void* _value);
+void HashMapDestroy(HashMap* _hashMap);
 
 //##############################
 //PRIVATE
 //##############################
 static uint64_t HashCode(const char* _key);
-static uint32_t GetBucketIndex(HashMap* _hashMap, const char* _key);
+static uint32_t GetBucketIndex(const HashMap* _hashMap, const char* _key);
