@@ -23,6 +23,11 @@ void Update(void);
 void DestroyGame(void);
 
 //##############################
+//PRIVATE
+//##############################
+static void UpdateSystems(void);
+
+//##############################
 //GLOBALS
 //##############################
 GameState* game_state;

@@ -150,9 +150,11 @@
     <ClCompile Include="Input.c" />
     <ClCompile Include="List.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Random.c" />
     <ClCompile Include="Screen.c" />
     <ClCompile Include="String.c" />
     <ClCompile Include="Texture.c" />
+    <ClCompile Include="Systems.c" />
     <ClCompile Include="Viewport.c" />
   </ItemGroup>
   <ItemGroup>
@@ -163,9 +165,11 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Random.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Systems.h" />
     <ClInclude Include="Viewport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -71,3 +71,9 @@ typedef struct RectangleF
 	float width;
 	float height;
 } RectangleF;
+
+typedef struct Rotation
+{
+	float angle;
+	float increase;
+} Rotation;

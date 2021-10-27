@@ -1,14 +1,15 @@
+#include <stdlib.h>
+#include <time.h>
 #include "DeltaTime.h"
 #include "SDL.h"
 #include "Entity.h"
 #include "Game.h"
+#include "Random.h"
 #include "Screen.h"
-
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 600
 
 int main()
 {
+    srand((unsigned)time(NULL));
     InitializeGameState();
 
     ScreenDimensions dimensions;
@@ -29,8 +30,14 @@ int main()
     InitializeEntityData();
 
     //TEST
-    Sprite* testSprite = LoadSprite("16066_616166.jpg");
-    FlipSprite(testSprite, true, false);
+    for(uint16_t i = 0; i < 100; ++i)
+    {
+        Sprite* testSprite = LoadSprite("still.png");
+        const EntityID entityId = RegisterEntity();
+        EntitySetSprite(entityId, testSprite);
+        EntitySetRotation(entityId, 0.f, RandomFloatBetween(5.f, 250.f));
+        EntitySetVelocity(entityId, RandomFloatBetween(25.f, 150.f), RandomFloatBetween(25.f, 150.f));
+    }
     //TEST
 
     game_state->viewport = viewport;
@@ -38,11 +45,6 @@ int main()
     {
         PrepareScreen();
         Update();
-
-        //TEST
-        DrawSprite(testSprite);
-        //TEST
-
         DrawScreen();
     }
 

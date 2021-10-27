@@ -27,7 +27,9 @@ typedef struct Sprite
 {
 	Texture* texture;
 	Position position;
+	Vector2Df center;
 	SDL_RendererFlip flip;
+	float rotation_angle;
 } Sprite;
 
 //##############################
@@ -35,8 +37,9 @@ typedef struct Sprite
 //##############################
 Sprite* LoadSprite(const char* _fileName);
 Texture* LoadTextureFromDisk(const char* _fileName);
-SDL_Rect GetSpriteSourceSDLRect(const Sprite* _sprite);
-SDL_Rect GetSpriteDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport);
+SDL_Rect SpriteGetSourceSDLRect(const Sprite* _sprite);
+SDL_Rect SpriteGetDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport);
+SDL_Point SpriteGetCenter(const Sprite* _sprite);
 void FlipSprite(Sprite* _sprite, bool _vertical, bool _horizontal);
 void DestroyTextures(void);
 

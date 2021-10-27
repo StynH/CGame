@@ -6,6 +6,9 @@
 //##############################
 //DEFINITIONS
 //##############################
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 600
+
 typedef Vector2D ScreenDimensions;
 typedef Vector3Du Color;
 

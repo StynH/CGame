@@ -17,12 +17,18 @@ Sprite* LoadSprite(const char* _fileName)
 		AddTextureToHashMap(_fileName, texture);
 	}
 
-	Sprite* sprite = malloc(sizeof(Sprite*));
+	Sprite* sprite = malloc(sizeof(Sprite));
 	if(sprite)
 	{
 		sprite->texture = texture;
 		sprite->position.x = 0.f;
 		sprite->position.y = 0.f;
+		
+		sprite->center.x = (float)texture->dimensions.x / 2.f;
+		sprite->center.y = (float)texture->dimensions.y / 2.f;
+
+		sprite->rotation_angle = 0.f;
+
 		sprite->flip = SDL_FLIP_NONE;
 
 		return sprite;
@@ -52,7 +58,7 @@ Texture* LoadTextureFromDisk(const char* _fileName)
 	return NULL;
 }
 
-SDL_Rect GetSpriteSourceSDLRect(const Sprite* _sprite)
+SDL_Rect SpriteGetSourceSDLRect(const Sprite* _sprite)
 {
 	SDL_Rect rect;
 	rect.x = 0;
@@ -62,7 +68,7 @@ SDL_Rect GetSpriteSourceSDLRect(const Sprite* _sprite)
 	return rect;
 }
 
-SDL_Rect GetSpriteDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport)
+SDL_Rect SpriteGetDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport)
 {
 	SDL_Rect rect;
 	rect.x = (int32_t)(_sprite->position.x - (float)_viewport->x);
@@ -70,6 +76,14 @@ SDL_Rect GetSpriteDestinationSDLRect(const Sprite* _sprite, const Viewport* _vie
 	rect.w = _sprite->texture->dimensions.x;
 	rect.h = _sprite->texture->dimensions.y;
 	return rect;
+}
+
+SDL_Point SpriteGetCenter(const Sprite* _sprite)
+{
+	SDL_Point point;
+	point.x = (int32_t)_sprite->center.x;
+	point.y = (int32_t)_sprite->center.y;
+	return point;
 }
 
 void FlipSprite(Sprite* _sprite, bool _vertical, bool _horizontal)

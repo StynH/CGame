@@ -16,13 +16,16 @@
     <ClCompile Include="List.c">
       <Filter>Data Structures</Filter>
     </ClCompile>
+    <ClCompile Include="Systems.c">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeltaTime.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="Position.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Texture.h" />
@@ -33,10 +36,20 @@
     <ClInclude Include="List.h">
       <Filter>Data Structures</Filter>
     </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Data Structures">
       <UniqueIdentifier>{fdc2f8d6-1076-4166-a423-4e81caace432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{5b5ac7ba-5acd-4ee5-8c05-c8c065cd798a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
