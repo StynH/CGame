@@ -20,6 +20,12 @@
       <Filter>Systems</Filter>
     </ClCompile>
     <ClCompile Include="Random.c" />
+    <ClCompile Include="Stack.c">
+      <Filter>Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue.c">
+      <Filter>Data Structures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeltaTime.h" />
@@ -43,6 +49,12 @@
       <Filter>Systems</Filter>
     </ClInclude>
     <ClInclude Include="Random.h" />
+    <ClInclude Include="Stack.h">
+      <Filter>Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Data Structures</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Data Structures">

@@ -150,6 +150,8 @@
     <ClCompile Include="Input.c" />
     <ClCompile Include="List.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Queue.c" />
+    <ClCompile Include="Stack.c" />
     <ClCompile Include="Random.c" />
     <ClCompile Include="Screen.c" />
     <ClCompile Include="String.c" />
@@ -165,6 +167,8 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="String.h" />
