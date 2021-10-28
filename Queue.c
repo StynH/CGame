@@ -33,3 +33,9 @@ void QueueEnqueue(Queue* _queue, void* _value)
 	StackPush(&_queue->first, _value);
 	_queue->size = _queue->first.size + _queue->second.size;
 }
+
+void QueueDestroy(const Queue* _queue)
+{
+	StackDestroy(&_queue->first);
+	StackDestroy(&_queue->second);
+}

@@ -24,3 +24,4 @@ bool StackEmpty(const Stack* _stack);
 void* StackPop(Stack* _stack);
 void StackPush(Stack* _stack, void* _value);
 void* StackFront(const Stack* _stack);
+void StackDestroy(const Stack* _stack);

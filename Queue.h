@@ -20,3 +20,4 @@ void QueueInitialize(Queue* _queue);
 bool QueueEmpty(const Queue* _queue);
 void* QueueDequeue(Queue* _queue);
 void QueueEnqueue(Queue* _queue, void* _value);
+void QueueDestroy(const Queue* _queue);

@@ -44,3 +44,14 @@ void* StackFront(const Stack* _stack)
 {
 	return _stack->head->value;
 }
+
+void StackDestroy(const Stack* _stack)
+{
+	StackNode* node = _stack->head;
+	while(node)
+	{
+		StackNode* next = node->next;
+		free(node);
+		node = next;
+	}
+}
