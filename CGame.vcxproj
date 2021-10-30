@@ -155,12 +155,14 @@
     <ClCompile Include="Random.c" />
     <ClCompile Include="Screen.c" />
     <ClCompile Include="String.c" />
+    <ClCompile Include="TestScreen.c" />
     <ClCompile Include="Texture.c" />
     <ClCompile Include="Systems.c" />
     <ClCompile Include="Viewport.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeltaTime.h" />
+    <ClInclude Include="DrawableScreen.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="HashMap.h" />
@@ -172,8 +174,10 @@
     <ClInclude Include="Random.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="TestScreen.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Systems.h" />
+    <ClInclude Include="TypeDef.h" />
     <ClInclude Include="Viewport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

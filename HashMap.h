@@ -1,4 +1,5 @@
 #pragma once
+#include "TypeDef.h"
 #include <stdint.h>
 
 //##############################
@@ -12,7 +13,7 @@
 typedef struct HashNode
 {
 	const char* key;
-	void* value;
+	voidPtr_t value;
 	uint64_t hash_code;
 
 	struct HashNode* next;
@@ -29,9 +30,9 @@ typedef struct HashMap
 //FUNCTIONS
 //##############################
 void HashMapInitialize(HashMap* _hashMap);
-void* HashMapRemove(HashMap* _hashMap, const char* _key);
-void* HashMapGet(const HashMap* _hashMap, const char* _key);
-void HashMapAdd(HashMap* _hashMap, const char* _key, void* _value);
+voidPtr_t HashMapRemove(HashMap* _hashMap, const char* _key);
+voidPtr_t HashMapGet(const HashMap* _hashMap, const char* _key);
+void HashMapAdd(HashMap* _hashMap, const char* _key, voidPtr_t _value);
 void HashMapDestroy(HashMap* _hashMap);
 
 //##############################

@@ -12,12 +12,12 @@ bool StackEmpty(const Stack* _stack)
 	return _stack->size == 0;
 }
 
-void* StackPop(Stack* _stack)
+voidPtr_t StackPop(Stack* _stack)
 {
 	if (StackEmpty(_stack)) return NULL;
 
 	StackNode* front = _stack->head;
-	void* frontVal = front->value;
+	const voidPtrConst_t frontVal = front->value;
 
 	_stack->head = front->next;
 	_stack->size--;
@@ -27,7 +27,7 @@ void* StackPop(Stack* _stack)
 	return frontVal;
 }
 
-void StackPush(Stack* _stack, void* _value)
+void StackPush(Stack* _stack, voidPtrConst_t _value)
 {
 	StackNode* node = malloc(sizeof(StackNode));
 	if(node)
@@ -40,7 +40,7 @@ void StackPush(Stack* _stack, void* _value)
 	}
 }
 
-void* StackFront(const Stack* _stack)
+voidPtr_t StackFront(const Stack* _stack)
 {
 	return _stack->head->value;
 }

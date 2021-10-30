@@ -12,9 +12,9 @@ bool QueueEmpty(const Queue* _queue)
 	return StackEmpty(&_queue->first) && StackEmpty(&_queue->second);
 }
 
-void* QueueDequeue(Queue* _queue)
+voidPtr_t QueueDequeue(Queue* _queue)
 {
-	if (QueueEmpty(_queue)) return NULL;
+	if(QueueEmpty(_queue)) return NULL;
 
 	if(StackEmpty(&_queue->second))
 	{
@@ -28,7 +28,7 @@ void* QueueDequeue(Queue* _queue)
 	return StackPop(&_queue->second);
 }
 
-void QueueEnqueue(Queue* _queue, void* _value)
+void QueueEnqueue(Queue* _queue, voidPtr_t _value)
 {
 	StackPush(&_queue->first, _value);
 	_queue->size = _queue->first.size + _queue->second.size;

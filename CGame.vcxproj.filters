@@ -1,15 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="DeltaTime.c" />
-    <ClCompile Include="Entity.c" />
-    <ClCompile Include="Game.c" />
-    <ClCompile Include="Input.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="Screen.c" />
-    <ClCompile Include="String.c" />
-    <ClCompile Include="Texture.c" />
-    <ClCompile Include="Viewport.c" />
     <ClCompile Include="HashMap.c">
       <Filter>Data Structures</Filter>
     </ClCompile>
@@ -17,25 +9,46 @@
       <Filter>Data Structures</Filter>
     </ClCompile>
     <ClCompile Include="Systems.c">
-      <Filter>Systems</Filter>
+      <Filter>Engine\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="Random.c" />
     <ClCompile Include="Stack.c">
       <Filter>Data Structures</Filter>
     </ClCompile>
     <ClCompile Include="Queue.c">
       <Filter>Data Structures</Filter>
     </ClCompile>
+    <ClCompile Include="Random.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="String.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewport.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="DeltaTime.c">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScreen.c">
+      <Filter>Game\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.c">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DeltaTime.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Screen.h" />
-    <ClInclude Include="String.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Viewport.h" />
     <ClInclude Include="HashMap.h">
       <Filter>Data Structures</Filter>
     </ClInclude>
@@ -46,22 +59,66 @@
       <Filter>Data Structures</Filter>
     </ClInclude>
     <ClInclude Include="Systems.h">
-      <Filter>Systems</Filter>
+      <Filter>Engine\Systems</Filter>
     </ClInclude>
-    <ClInclude Include="Random.h" />
     <ClInclude Include="Stack.h">
       <Filter>Data Structures</Filter>
     </ClInclude>
     <ClInclude Include="Queue.h">
       <Filter>Data Structures</Filter>
     </ClInclude>
+    <ClInclude Include="Viewport.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="DeltaTime.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDef.h">
+      <Filter>Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableScreen.h">
+      <Filter>Game\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScreen.h">
+      <Filter>Game\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Data Structures">
       <UniqueIdentifier>{fdc2f8d6-1076-4166-a423-4e81caace432}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Systems">
+    <Filter Include="Engine">
+      <UniqueIdentifier>{b9c7a5d0-b89c-4821-9064-bcca7f7dd49a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Systems">
       <UniqueIdentifier>{5b5ac7ba-5acd-4ee5-8c05-c8c065cd798a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{c5d6a999-da7b-4e42-91f7-987f99770f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Screens">
+      <UniqueIdentifier>{160fe5da-7c9e-4a02-9aca-88737a4d25b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

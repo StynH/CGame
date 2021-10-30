@@ -6,11 +6,13 @@
 #include "Game.h"
 #include "Random.h"
 #include "Screen.h"
+#include "TestScreen.h"
 
 int main()
 {
     srand((unsigned)time(NULL));
     InitializeGameState();
+    SetScreen(CreateTestScreen());
 
     ScreenDimensions dimensions;
     dimensions.x = SCREEN_WIDTH;

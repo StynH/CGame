@@ -2,6 +2,9 @@
 #include <SDL_render.h>
 #include <SDL_video.h>
 #include <stdbool.h>
+
+#include "DrawableScreen.h"
+#include "Stack.h"
 #include "Viewport.h"
 
 //##############################
@@ -19,15 +22,18 @@ typedef struct GameState
 //FUNCTIONS
 //##############################
 void InitializeGameState(void);
+void SetScreen(const DrawableScreen* _screen);
 void Update(void);
 void DestroyGame(void);
 
 //##############################
 //PRIVATE
 //##############################
-static void UpdateSystems(void);
+static void DrawCurrentScreen(void);
+static void UpdateCurrentScreen(void);
 
 //##############################
 //GLOBALS
 //##############################
 GameState* game_state;
+Stack* screen_stack;

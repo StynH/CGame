@@ -1,8 +1,7 @@
 #include "Game.h"
 #include "DeltaTime.h"
-#include "Entity.h"
+#include "DrawableScreen.h"
 #include "Input.h"
-#include "Systems.h"
 
 void InitializeGameState()
 {
@@ -11,13 +10,21 @@ void InitializeGameState()
 	{
 		game_state->isRunning = true;
 	}
+
+	screen_stack = malloc(sizeof(Stack));
+}
+
+void SetScreen(const DrawableScreen* _screen)
+{
+	StackPush(screen_stack, _screen);
 }
 
 void Update()
 {
 	TickDeltaTime();
 	PollInput();
-	UpdateSystems();
+	UpdateCurrentScreen();
+	DrawCurrentScreen();
 
 	if(window_events.closeButtonClicked)
 	{
@@ -28,22 +35,18 @@ void Update()
 void DestroyGame()
 {
 	free(game_state);
+	StackDestroy(screen_stack);
+	free(screen_stack);
 }
 
-void UpdateSystems()
+void DrawCurrentScreen()
 {
-	uint32_t index = 0;
-	uint32_t entitiesUpdated = 0;
-	while(entitiesUpdated < game_entities.amount_of_entities && index < MAX_ENTITIES)
-	{
-		if(game_entities.ids[index] != UNUSED_ENTITY_ID)
-		{
-			CollisionSystem(&game_entities.positions[index], &game_entities.velocities[index]);
-			VelocitySystem(&game_entities.positions[index], &game_entities.velocities[index]);
-			RotationSystem(&game_entities.rotations[index]);
-			DrawSystem(&game_entities.positions[index], &game_entities.rotations[index], game_entities.sprites[index]);
-			++entitiesUpdated;
-		}
-		++index;
-	}
+	const DrawableScreen* screen = StackFront(screen_stack);
+	screen->draw();
+}
+
+void UpdateCurrentScreen()
+{
+	const DrawableScreen* screen = StackFront(screen_stack);
+	screen->update();
 }

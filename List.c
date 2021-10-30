@@ -7,7 +7,7 @@ void ListInitialize(List* _list)
 	_list->size = 0;
 }
 
-void ListAdd(List* _list, void* _value)
+void ListAdd(List* _list, voidPtr_t _value)
 {
 	ListNode* head = _list->head;
 	while(head && head->next)
@@ -34,7 +34,7 @@ void ListAdd(List* _list, void* _value)
 	}
 }
 
-void* ListGet(const List* _list, uint32_t _index)
+voidPtr_t ListGet(const List* _list, uint32_t _index)
 {
 	uint32_t index = 0;
 	ListNode* node = _list->head;
@@ -53,7 +53,7 @@ void* ListGet(const List* _list, uint32_t _index)
 	return NULL;
 }
 
-void* ListRemove(List* _list, uint32_t _index)
+voidPtr_t ListRemove(List* _list, uint32_t _index)
 {
 	uint32_t index = 0;
 	ListNode* node = _list->head;
@@ -63,7 +63,7 @@ void* ListRemove(List* _list, uint32_t _index)
 	{
 		if (index == _index)
 		{
-			void* value = node->value;
+			voidPtr_t value = node->value;
 			if(prevNode)
 			{
 				prevNode->next = node->next;

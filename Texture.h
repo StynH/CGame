@@ -38,6 +38,7 @@ typedef struct Sprite
 Sprite* LoadSprite(const char* _fileName);
 Texture* LoadTextureFromDisk(const char* _fileName);
 SDL_Rect SpriteGetSourceSDLRect(const Sprite* _sprite);
+SDL_Rect SpriteGetSourceSDLRectAbsolute(const Sprite* _sprite);
 SDL_Rect SpriteGetDestinationSDLRect(const Sprite* _sprite, const Viewport* _viewport);
 SDL_Point SpriteGetCenter(const Sprite* _sprite);
 void FlipSprite(Sprite* _sprite, bool _vertical, bool _horizontal);
@@ -46,7 +47,7 @@ void DestroyTextures(void);
 //##############################
 //PRIVATE
 //##############################
-HashMap* texture_hashmap;
+static HashMap* texture_hashmap;
 static void InitializeTextureHashMap(void);
 static void AddTextureToHashMap(const char* _fileName, Texture* _texture);
 static Texture* GetTextureFromHashMap(const char* _fileName);

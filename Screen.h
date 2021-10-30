@@ -22,4 +22,5 @@ void PrepareScreen(void);
 void SetViewport(const Viewport* _viewport);
 void DrawScreen(void);
 void DrawSprite(const Sprite* _sprite);
+void DrawSpriteAbsolute(const Sprite* _sprite);
 void DestroyScreen(void);

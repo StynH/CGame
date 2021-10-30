@@ -18,7 +18,7 @@ void HashMapInitialize(HashMap* _hashMap)
     }
 }
 
-void* HashMapRemove(HashMap* _hashMap, const char* _key)
+voidPtr_t HashMapRemove(HashMap* _hashMap, const char* _key)
 {
 	const uint32_t bucketIndex = GetBucketIndex(_hashMap, _key);
     const uint64_t hashCode = HashCode(_key);
@@ -56,7 +56,7 @@ void* HashMapRemove(HashMap* _hashMap, const char* _key)
     return head->value;
 }
 
-void* HashMapGet(const HashMap* _hashMap, const char* _key)
+voidPtr_t HashMapGet(const HashMap* _hashMap, const char* _key)
 {
 	const uint32_t bucketIndex = GetBucketIndex(_hashMap, _key);
     const uint64_t hashCode = HashCode(_key);
@@ -74,7 +74,7 @@ void* HashMapGet(const HashMap* _hashMap, const char* _key)
     return NULL;
 }
 
-void HashMapAdd(HashMap* _hashMap, const char* _key, void* _value)
+void HashMapAdd(HashMap* _hashMap, const char* _key, voidPtr_t _value)
 {
 	const uint32_t bucketIndex = GetBucketIndex(_hashMap, _key);
 	const uint64_t hashCode = HashCode(_key);

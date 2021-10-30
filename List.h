@@ -1,4 +1,5 @@
 #pragma once
+#include "TypeDef.h"
 #include <stdint.h>
 
 //##############################
@@ -6,7 +7,7 @@
 //##############################
 typedef struct ListNode
 {
-	void* value;
+	voidPtr_t value;
 	struct ListNode* next;
 } ListNode;
 
@@ -20,6 +21,6 @@ typedef struct List
 //FUNCTIONS
 //##############################
 void ListInitialize(List* _list);
-void ListAdd(List* _list, void* _value);
-void* ListGet(const List* _list, uint32_t _index);
-void* ListRemove(List* _list, uint32_t _index);
+void ListAdd(List* _list, voidPtr_t _value);
+voidPtr_t ListGet(const List* _list, uint32_t _index);
+voidPtr_t ListRemove(List* _list, uint32_t _index);

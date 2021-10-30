@@ -60,6 +60,13 @@ void DrawSprite(const Sprite* _sprite)
     SDL_RenderCopyEx(game_state->renderer, _sprite->texture->sdl_texture, &srcRect, &dstRect, (double)_sprite->rotation_angle, &spriteCenter, _sprite->flip);
 }
 
+void DrawSpriteAbsolute(const Sprite* _sprite)
+{
+	const SDL_Rect srcRect = SpriteGetSourceSDLRectAbsolute(_sprite);
+    const SDL_Point spriteCenter = SpriteGetCenter(_sprite);
+	SDL_RenderCopyEx(game_state->renderer, _sprite->texture->sdl_texture, NULL, &srcRect, (double)_sprite->rotation_angle, &spriteCenter, _sprite->flip);
+}
+
 void DestroyScreen()
 {
     SDL_DestroyWindow(game_state->window);

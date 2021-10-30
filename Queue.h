@@ -18,6 +18,6 @@ typedef struct Queue
 //##############################
 void QueueInitialize(Queue* _queue);
 bool QueueEmpty(const Queue* _queue);
-void* QueueDequeue(Queue* _queue);
-void QueueEnqueue(Queue* _queue, void* _value);
+voidPtr_t QueueDequeue(Queue* _queue);
+void QueueEnqueue(Queue* _queue, voidPtr_t _value);
 void QueueDestroy(const Queue* _queue);
